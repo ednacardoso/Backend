@@ -1,0 +1,15 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        int valor = 5;
+
+        do
+        {
+            Console.WriteLine(valor);
+            valor--;
+        }
+        while (valor >= 5);
+
+         }
+    }

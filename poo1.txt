@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Matricula
+{
+    public class Aluno
+    {
+        public Guid Id { get; set; }
+        public string Nome { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public string Endereco { get; set; }
+        public string NomeMae { get; set; }
+        public string NomePai { get; set; }
+        public List<double> Notas { get; set; }
+
+        public Aluno(string nome, 
+            DateTime dataNascimento, 
+            string endereco, 
+            string nomeMae,
+            string nomePai,
+            List<double> notas)
+        {
+            Nome = nome;
+            DataNascimento = dataNascimento;
+            Endereco = endereco;
+            NomeMae = nomeMae;
+            NomePai = nomePai;
+            Notas = notas;
+        }
+
+        public double CalcularMedia()
+        {
+            double somaNota = 0;
+
+            foreach (var item in Notas)
+            {
+                somaNota += item;
+            }
+
+            return (somaNota / Notas.Count) ;
+        }
+
+        public bool DefinirStatusAluno(double media)
+        {
+            Console.WriteLine(media > 7 ? "Aluno Aprovado"
+                : "Aluno Reprovado");
+            return (media > 7);
+        }
+    }
+}
+
+//////////////////////////////////////////////////
+// Método Main
+static void Main(string[] args)
+{
+    List<double> notas = new List<double>();
+
+    // Entrada
+    Console.WriteLine("Informe o nome do aluno:");
+    string nome = Console.ReadLine();
+
+    Console.WriteLine("Informe a primeira nota: ");
+    notas.Add(double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture));
+
+    Console.WriteLine("Informe a segunda nota: ");
+    notas.Add(double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture));
+
+    Console.WriteLine("Informe a terceira nota: ");
+    notas.Add(double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture));
+
+    Console.WriteLine("Infome a data de nascimento: ");
+    DateTime dataNascimento = DateTime.Parse(Console.ReadLine());
+
+    Console.WriteLine("Infome o endereço: ");
+    string endereco = Console.ReadLine();
+
+    Console.WriteLine("Informe o nome da mãe: ");
+    string nomeMae = Console.ReadLine();
+
+    Console.WriteLine("Informe o nome do pai: ");
+    string nomePai = Console.ReadLine();
+
+    Aluno aluno = new Aluno(
+        nome,
+        dataNascimento,
+        endereco,
+        nomeMae,
+        nomePai,
+        notas);
+
+    //Processamento
+    double media = aluno.CalcularMedia();
+    bool statusAluno = aluno.DefinirStatusAluno(media);
+
+    // Saída
+    Console.WriteLine($"A média do aluno foi {media}");
+    Console.WriteLine(statusAluno ? "Aluno Aprovado"
+        : "Aluno Reprovado");
+}     
+
+

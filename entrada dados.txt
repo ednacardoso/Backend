@@ -1,0 +1,26 @@
+string frase;
+        int n1;
+        double n2;
+        
+        Console.WriteLine ("Entre com o seu nome completo: ");
+        frase = Console.ReadLine();
+        Console.WriteLine ("Quantos quartos tem a sua casa: ");
+        n1 = int.Parse(Console.ReadLine());
+        Console.WriteLine ("Entre com o preço do produto: ");
+        n2 = double.Parse(Console.ReadLine());
+        
+        Console.WriteLine (frase);
+        Console.WriteLine (n1);
+        Console.WriteLine (n2);
+
+  int y;
+      int x; 
+      int w;
+      
+       Console.WriteLine ("Digite o primeiro número ");
+       y = int.Parse(Console.ReadLine(""));
+       Console.WriteLine ("Digite o segundo número ");
+       x = int.Parse(Console.ReadLine(" "));
+            
+      Console.WriteLine(y);
+      Console.WriteLine(x);

@@ -1,0 +1,20 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        int idadeUsuario;
+
+        Console.WriteLine("Digite a sua idade: ");
+        idadeUsuario = Convert.ToInt32(Console.ReadLine());
+
+        if(!(idadeUsuario >= 18))
+        {
+            Console.WriteLine("Não está apto a votar");
+        }
+
+        else
+        {
+            Console.WriteLine("Pode votar. Bom voto!");
+        }
+    }
+    }

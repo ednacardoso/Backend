@@ -1,0 +1,41 @@
+// See https://aka.ms/new-console-template for more information
+using System.Runtime.Serialization;
+
+internal class Program
+{
+
+
+    static void Main(string[] args)
+    {
+        int[] numeros = { 1, 2, 3, 4, 5, 5, 5, 4, 9 };
+
+        int numeroAtual, frequenciaAtual,
+            numeroMaisFrequente = numeros[0], frequenciaMaisFrequente = 1;
+
+        for (int i = 0; i < numeros.Length; i++)
+        {
+            numeroAtual = numeros[i];
+            frequenciaAtual = 1;
+
+            for (int j = i + 1; j < numeros.Length; j++)
+            {
+               if( numeros[j] ==numeroAtual)
+                {
+                    frequenciaAtual++;
+                }
+            }
+
+            if(frequenciaAtual > frequenciaMaisFrequente)
+            {
+                frequenciaMaisFrequente = frequenciaAtual;
+                numeroMaisFrequente = numeroAtual;
+            }
+        }
+        Console.WriteLine($"O número mais frequente é:{numeroMaisFrequente}");
+        Console.WriteLine($"A frequencia desse numero é:{frequenciaMaisFrequente}");
+
+    }
+}
+
+
+

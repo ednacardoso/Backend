@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static ConsoleApp2.Class1;
+
+namespace ConsoleApp2
+{
+    internal class Class2
+    {
+
+        public class Program
+        {
+            public static void Main(string[] args)
+            {
+                Operacoes operacao = new OperacaoSoma();
+                List<int> numeros = new List<int>() { 1, 2, 3 };
+                int resultado = operacao.Somar(numeros);
+                Console.WriteLine("O resultado da soma é: " + resultado);
+            }
+        }
+
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Class1
+    {
+
+        public class OperacaoSoma : Operacoes
+        {
+            public override int Somar(List<int> numeros)
+            {
+                int resultado = 0;
+                foreach (int num in numeros)
+                {
+                    resultado += num;
+                }
+                return resultado;
+            }
+        }
+
+    }
+
+
+
+}
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+
+public abstract class Operacoes
+{
+    public string TipoOperacao { get; set; }
+    public string NomeOperacao { get; set; }
+
+    public abstract int Somar(List<int> numeros);
+}
