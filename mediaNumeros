@@ -1,0 +1,32 @@
+ static void Main(string[] args)
+    {
+
+
+
+        {
+
+            {
+                int quantidadeNumeros, numero, soma = 0;
+                double media;
+
+                Console.WriteLine("Digite a quantidade de números que você irá digitar:");
+                quantidadeNumeros = Convert.ToInt32(Console.ReadLine());
+
+                for (int i = 1; i <= quantidadeNumeros; i++)
+                {
+                    Console.WriteLine("Digite o " + i + "º número:");
+                    numero = Convert.ToInt32(Console.ReadLine());
+                    soma += numero;
+                }
+
+                media = (double)soma / quantidadeNumeros;
+
+                Console.WriteLine("A soma dos números digitados é: " + soma);
+                Console.WriteLine("A média dos números digitados é: " + media);
+
+                Console.ReadLine();
+            }
+        }
+        
+    }
+}
