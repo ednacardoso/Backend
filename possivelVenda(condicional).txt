@@ -1,0 +1,22 @@
+using System;
+
+public class compraAprovada
+{
+    public static void Main(string[] args)
+    {
+      int produtosEstoque = 10;
+      int produtosCompra = 4;
+      bool possivelVenda = produtosCompra <= produtosEstoque;
+      
+     if(possivelVenda)
+      {
+        Console.WriteLine("Obrigado pela preferência");
+    }
+    
+    else
+    {
+        Console.WriteLine("Número insuficiente");
+    }
+    
+    }
+}
